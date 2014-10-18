@@ -1,0 +1,47 @@
+<head>
+  <title>publish-subscribe-demo</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+  {{> ratings}}
+</body>
+
+<template name="hello">
+
+
+<ul>
+    <h3>Blog Posts</h3>
+    {{#each posts}}
+        <li>{{title}}</li>
+    {{/each}}
+</ul>
+
+
+<ul>
+    <h3>Ad Posts</h3>
+    {{#each ads}}
+        <li>{{title}}</li>
+    {{/each}}
+</ul>
+
+<!-- will not publish because its not a helper -->
+<ul>
+    <h3>Each Ratings</h3>
+    {{#each ratings}}
+        <li>Rating: {{name}} , {{rating}}</li>
+    {{/each}}
+</ul>
+
+</template>
+
+<template name="ratings">
+<ul>
+    <h3>Each Ratings</h3>
+    {{#each ratings}}
+        <li>Rating: {{name}} , {{rating}}</li>
+    {{/each}}
+</ul>
+</template>
