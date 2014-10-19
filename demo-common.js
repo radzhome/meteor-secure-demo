@@ -13,8 +13,14 @@ BlogPosts.allow({
       return true to allow insert */
       return true;
     },
-    'remove': function (userID, doc){
+    'remove': function (userID, docs){
         return true;
+    },
+    update: function(userId, docs, fields, modifier){
+        return true;
+//        return adminUser(userId) || _.all(docs, function(doc) {
+//            return doc.owner === userId;
+//        });
     }
 });
 
