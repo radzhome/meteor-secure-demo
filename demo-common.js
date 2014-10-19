@@ -6,6 +6,17 @@ AverageRatings = new Meteor.Collection('average_ratings');
 SomeCollection = new Meteor.Collection('some_collection');
 
 
+/* After insecure is removed, have to have this */
+BlogPosts.allow({
+    'insert': function (userId, doc) {
+      /* user and doc checks ,
+      return true to allow insert */
+      return true;
+    },
+    'remove': function (userID, doc){
+        return true;
+    }
+});
 
 /*
 BlogPosts.insert({title: "How To Make the Default Meteor Application", draft: true});
